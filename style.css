@@ -114,7 +114,6 @@ hr {
 	border-color:#dfdfdf;
 }
 
-/*In case you put a video in the future */
 .video-container {
 	position:relative;
 	padding-bottom:56.25%;
@@ -131,4 +130,29 @@ hr {
 	height:100%;
 	padding-bottom:2%;
 	
+}
+
+#toc {
+	list-style: none;
+	margin-bottom: 20px;
+}
+#toc li {
+	background: url(dot.gif) repeat-x bottom left;
+	overflow: hidden;
+	padding-bottom: 2px;
+}
+#toc a,
+#toc span {
+	display: inline-block;
+	background: #fff;
+	position: relative;
+	bottom: -4px;
+}
+#toc a {
+	float: right;
+	padding: 0 0 3px 2px;
+}
+#toc span {
+	float: left;
+	padding: 0 2px 3px 0;
 }
