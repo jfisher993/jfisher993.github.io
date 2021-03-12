@@ -7,11 +7,27 @@ body {
 	background-color: #fff;
 	color: #545454;	
 	font: 14px/20px "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif;
-	  background: url("./assets/images/RENDER_CoverImage.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat; background-size: cover;
+}
+
+@media (max-width: 480px) {
+    body {
+        background-image: url(./assets/images/RENDER_CoverImage.jpg);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        background-image: url(./assets/images/RENDER_CoverImage.jpg);
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+	    background-image: url(./assets/images/RENDER_CoverImage.jpg);
+   }
 }
 
 header {background-color: #FFF; width: 100%; margin: 0 auto; position: relative; padding: 20px 0; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
