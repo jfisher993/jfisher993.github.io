@@ -105,7 +105,7 @@ img:hover {
 	color:black;
 	background-color: white;
 	opacity: 0.5;
-	position: absolute;
+	position: fixed;
     left: 0;
     bottom: 0;
     height: 5%;
