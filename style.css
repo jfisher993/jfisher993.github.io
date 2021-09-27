@@ -101,14 +101,14 @@ img:hover {
 
 #footer {
 	padding-top:15px;
-	font-size: 16px; line-height: 20px;
+	font-size: 14px; line-height: 20px;
 	color:black;
 	background-color: white;
 	opacity: 0.5;
-	position: absolute;
+	position: fixed;
     left: 0;
     bottom: 0;
-    height: 5%;
+    height: 4%;
     width: 100%;
     overflow:hidden;
     text-align: center;
