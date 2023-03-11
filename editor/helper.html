@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ST2 Editor Helper</title>
+  </head>
+  <body>
+    <form>
+      <label for="input">Select a map:</label>
+      <input type="file" id="input" accept=".json" />
+      <br>
+      <label for="outputName">Enter a name for the new map:</label>
+      <input type="text" id="outputName" placeholder="output.json">
+      <br>
+      <button type="submit" onclick="processFile()">Purge Water</button>
+    </form>
+
+    <script>
+      const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+      function processFile() {
+        const input = document.getElementById("input");
+        const file = input.files[0];
+        if (file && file.size > MAX_FILE_SIZE) {
+          alert("Error: File size exceeds the limit of 5 MB.");
+          return;
+        }
+        const reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function () {
+          const data = JSON.parse(reader.result);
+          data.TileData.forEach(function (tile) {
+            tile.WaterHeight = 0;
+          });
+          const output = JSON.stringify(data, null, 0);
+          const outputName = document.getElementById("outputName").value || "output.json";
+          const blob = new Blob([output], { type: "application/json;charset=utf-8" });
+          if (window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, outputName);
+          } else {
+            const downloadLink = document.createElement("a");
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = outputName;
+            downloadLink.click();
+            URL.revokeObjectURL(downloadLink.href);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
